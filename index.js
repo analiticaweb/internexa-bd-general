@@ -40,6 +40,28 @@ app.post("/send-user", (req, res) => {
 
 })
 
+app.post("/thank-you",(req,res)=>{
+    var user = {
+        EmailAddress: req.body.email,
+        CustomFields: [
+            { Key: 'company', Value: req.body.company },
+            { Key: 'phone', Value: req.body.phone },
+            { Key: 'descripcionAsesoria', Value: req.body.descripcionAsesoria }
+          ]
+    };
+    api.subscribers.addSubscriber(listId, user, (err, response) => {
+        if (err) {
+            console.log(err);
+            res.send(err)
+        }
+        else {
+            console.log(response)
+            console.log(user);
+            res.render('thank-you');
+        }
+    });
+})
+
 
 app.listen(port, () => {
     console.log("Servidor inicilizado en ", port)
