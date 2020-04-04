@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>.::Response | InterNexa::.</title>
+    <link rel="icon" href="https://www.internexa.com/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
+
 <body>
-    Respuesta {{ name }}
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <div class="container-fluid" style="margin-bottom:50px;">
+        <div class="row">
+            <div class="col-12" style="padding-top:10px;padding-bottom:30px;background:#004F9A;">
+                <div class="text-center">
+                    <img src="https://www.internexa.com/assets/images/logo-rgb.png" alt="">
+                </div>
+                <h1 class="text-center" style="color:#ffffff;margin:0px;">
+                    ¡Gracias por tu respuesta!
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top:20px;">
+            <div class="col-xs-12 col-sm-10 col-lg-8">
+                <p class="text-center">
+                    Recuerda que en InterNexa tenemos un equipo de especialistas listos para acompañarte en esta nueva etapa de tu negocio.
+                </p>
+                <p class="text-center">
+                    Completa tus datos para que un asesor se ponga en contacto contigo lo más pronto posible.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-sm-9 col-lg-6">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{email}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Compañía</label>
+                        <input type="text" class="form-control" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono/Celular</label>
+                        <input type="number" class="form-control" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcionAsesoria">Example textarea</label>
+                        <textarea class="form-control" id="descripcionAsesoria" name="descripcionAsesoria" rows="3" style="resize:none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="background:#004F9A;color:#ffffff;">Aceptar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

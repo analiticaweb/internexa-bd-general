@@ -23,7 +23,7 @@ app.post("/send-user", (req, res) => {
     var user = {
         EmailAddress: req.body.email,
         CustomFields: [
-            { Key: 'asistencia', Value: 1 }
+            { Key: 'asesoria', Value: 1 }
           ]
     };
     api.subscribers.addSubscriber(listId, user, (err, response) => {
