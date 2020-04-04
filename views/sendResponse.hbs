@@ -44,8 +44,9 @@
             <div class="col-xs-12 col-sm-9 col-lg-6">
                 <form action="https://internexa-mql.herokuapp.com/thank-you/" method="post">
                     <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" value="{{email}}" disabled>
+                        <label for="email1">Email address</label>
+                        <input type="email1" class="form-control" id="email1" name="email1" value="{{email}}" disabled>
+                        <input style="display:none;" type="email" class="form-control" id="email" name="email" value="{{email}}">
                     </div>
                     <div class="form-group">
                         <label for="company">Compañía</label>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descripcionAsesoria">¿Qué dudas tienes?</label>
-                        <textarea class="form-control" id="descripcionAsesoria" name="descripcionAsesoria" rows="3" style="resize:none;"></textarea>
+                        <textarea class="form-control" id="descripcionAsesoria" name="descripcionAsesoria" rows="3" style="resize:none;" maxlength="250"></textarea>
                     </div>
                     <button type="submit" class="btn" style="background:#004F9A;color:#ffffff;">Aceptar</button>
                 </form>
