@@ -17,12 +17,13 @@ const port = process.env.PORT || 3000;
 var auth = { apiKey: 'rRqs0ZRCR5SpvpBcEihc/MH9y3zI+htzXcOLnkWraOHM6c9qR6RL/jDpYepA73jmHvxxPD4H2E7ypjmjW4VGxWnRIq2V1ekMqWY5P52VHYvHZGcoNQV6SFsUdradTbGrFj9aJPSKt2pnK4S/WbEGiQ==' };
 var api = new createsend(auth);
 var listId = 'dabb329b9c92c5f5262377d0c5441659' // The ID of the list
-var testList = '7d3ca8bca6a63c69c783ab4e2217695a'
+var testList = '6be75a3c3c4cedfe89cc85b742bed429'
 
 
-app.get("/send-user/:email", (req, res) => {
+app.get("/send-user/:name/:email", (req, res) => {
     var user = {
         EmailAddress: req.params.email,
+        Name: req.params.name,
         CustomFields: [
             { Key: 'asesoria', Value: 1 }
         ]
