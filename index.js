@@ -30,11 +30,10 @@ app.get("/send-user/:name/:email", (req, res) => {
     };
     api.subscribers.addSubscriber(testList, user, (err, response) => {
         if (err) {
-            console.log(err);
             res.send(err)
         }
         else {
-            res.render('sendResponse', { email: user.EmailAddress });
+            res.render('send-user', { email: user.EmailAddress,name:user.Name });
         }
     });
 
@@ -43,6 +42,7 @@ app.get("/send-user/:name/:email", (req, res) => {
 app.post("/thank-you", (req, res) => {
     var user = {
         EmailAddress: req.body.email,
+        Name: req.body.name,
         CustomFields: [
             { Key: 'company', Value: req.body.company },
             { Key: 'phone', Value: req.body.phone },
@@ -51,12 +51,9 @@ app.post("/thank-you", (req, res) => {
     };
     api.subscribers.addSubscriber(testList, user, (err, response) => {
         if (err) {
-            console.log(err);
             res.send(err)
         }
         else {
-            console.log(response)
-            console.log(user);
             res.render('thank-you');
         }
     });
