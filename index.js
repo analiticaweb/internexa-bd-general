@@ -28,7 +28,7 @@ app.get("/send-user/:name/:email", (req, res) => {
             { Key: 'asesoria', Value: 1 }
         ]
     };
-    api.subscribers.addSubscriber(testList, user, (err, response) => {
+    api.subscribers.addSubscriber(listId, user, (err, response) => {
         if (err) {
             res.send(err)
         }
@@ -49,7 +49,7 @@ app.post("/thank-you", (req, res) => {
             { Key: 'descripcionAsesoria', Value: req.body.descripcionAsesoria }
         ]
     };
-    api.subscribers.addSubscriber(testList, user, (err, response) => {
+    api.subscribers.addSubscriber(listId, user, (err, response) => {
         if (err) {
             res.send(err)
         }
