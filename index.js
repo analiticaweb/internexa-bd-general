@@ -20,11 +20,11 @@ var listId = 'dabb329b9c92c5f5262377d0c5441659' // The ID of the list
 var testList = '7d3ca8bca6a63c69c783ab4e2217695a'
 
 
-app.post("/send-user", (req, res) => {
+app.post("/send-user:/email", (req, res) => {
     var user = {
-        EmailAddress: req.body.email,
+        EmailAddress: req.params.email,
         CustomFields: [
-            { Key: 'asesoria', Value: req.body.asesoria }
+            { Key: 'asesoria', Value: 1 }
         ]
     };
     api.subscribers.addSubscriber(testList, user, (err, response) => {
@@ -33,18 +33,13 @@ app.post("/send-user", (req, res) => {
             res.send(err)
         }
         else {
-            if (req.body.asesoria == 1) {
-                res.render('sendResponse', { email: user.EmailAddress });
-            } else {
-                res.render('thank-you');
-            }
-
+            res.render('sendResponse', { email: user.EmailAddress });
         }
     });
 
 })
 app.get('/question/:email', (req, res) => {
-    res.render('question',{email:req.params.email});
+    res.render('question', { email: req.params.email });
 })
 
 app.post("/thank-you", (req, res) => {
