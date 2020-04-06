@@ -20,7 +20,7 @@ var listId = 'dabb329b9c92c5f5262377d0c5441659' // The ID of the list
 var testList = '7d3ca8bca6a63c69c783ab4e2217695a'
 
 
-app.get("/send-user:/email", (req, res) => {
+app.get("/send-user/:email", (req, res) => {
     var user = {
         EmailAddress: req.params.email,
         CustomFields: [
