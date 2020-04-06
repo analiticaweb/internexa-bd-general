@@ -50,8 +50,8 @@ app.get('/send-user', (req, res) => {
 app.get('/thank-you', (req, res) => {
     res.render('thank-you');
 })
-app.get('/question', (req, res) => {
-    res.render('question');
+app.post('/question', (req, res) => {
+    res.render('question',{email:req.body.email});
 })
 
 app.post("/thank-you", (req, res) => {
